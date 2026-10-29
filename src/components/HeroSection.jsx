@@ -154,7 +154,7 @@ const HeroSection = () => {
             </p>
           </motion.div>
 
-          {/* 4. "నిశ్చితార్థ మహోత్సవం" Heading */}
+          {/* 4. "మొగుళ్ళూరు వారి నిశ్చితార్థ మహోత్సవం" Heading (Line by Line) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -164,8 +164,15 @@ const HeroSection = () => {
             <span className="font-subheading text-[11px] sm:text-xs tracking-widest text-[#9E782F] font-bold uppercase mb-0.5">
               {event.badge}
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-[42px] text-[#820A24] font-bold leading-tight drop-shadow-[0_1px_1px_rgba(130,10,36,0.15)]">
-              {event.title}
+            <h1 className="font-heading text-center text-[#820A24] font-bold leading-tight drop-shadow-[0_1px_1px_rgba(130,10,36,0.15)] flex flex-col items-center px-2">
+              {event.titlePrefix && (
+                <span className="text-xl sm:text-2xl md:text-[28px] leading-snug">
+                  {event.titlePrefix}
+                </span>
+              )}
+              <span className="text-3xl sm:text-4xl md:text-[42px] leading-tight mt-0.5">
+                {event.title}
+              </span>
             </h1>
             <GoldAuspiciousDivider className="mt-1" />
           </motion.div>

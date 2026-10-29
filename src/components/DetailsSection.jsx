@@ -90,8 +90,15 @@ const DetailsSection = () => {
             <span className="font-subheading text-xs sm:text-sm text-[#9E782F] font-bold tracking-wider">
               {ui.ceremonyLabel}
             </span>
-            <h3 className="font-heading text-2xl sm:text-3xl text-[#820A24] font-bold mt-0.5">
-              {event.title}
+            <h3 className="font-heading text-center text-[#820A24] font-bold mt-0.5 flex flex-col items-center">
+              {event.titlePrefix && (
+                <span className="text-xl sm:text-2xl leading-snug">
+                  {event.titlePrefix}
+                </span>
+              )}
+              <span className="text-2xl sm:text-3xl leading-tight mt-0.5">
+                {event.title}
+              </span>
             </h3>
             <p className="font-telugu text-xs sm:text-[13px] text-[#483424] font-medium mt-1 max-w-sm px-2">
               {event.invitationNote}
@@ -112,7 +119,7 @@ const DetailsSection = () => {
                   {ui.ceremonyLabel}
                 </span>
                 <span className="font-heading font-bold text-lg sm:text-xl text-[#820A24] leading-tight mt-0.5">
-                  {event.title}
+                  {event.fullTitle || (event.titlePrefix ? `${event.titlePrefix} ${event.title}` : event.title)}
                 </span>
               </div>
             </div>

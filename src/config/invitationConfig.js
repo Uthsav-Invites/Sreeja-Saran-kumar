@@ -14,10 +14,10 @@ export const INVITATION_CONFIG = {
     role: "వధువు",
     relationLabel: "తల్లిదండ్రులు",
     parentHonorific: "సుపుత్రిక", // D/o (Daughter of)
-    motherName: "శ్రీమతి తిగిరెడ్డి పద్మావతి",
-    fatherName: "శ్రీ తిగిరెడ్డి సత్యనారాయణ",
-    formattedParents: "శ్రీమతి తిగిరెడ్డి పద్మావతి & శ్రీ తిగిరెడ్డి సత్యనారాయణ",
-    familyClan: "తిగిరెడ్డి వారి కుటుంబం",
+    motherName: "శ్రీమతి మొగుళ్ళూరు హిమజ",
+    fatherName: "శ్రీ మొగుళ్ళూరు ప్రసాద్",
+    formattedParents: "శ్రీమతి మొగుళ్ళూరు హిమజ & శ్రీ మొగుళ్ళూరు ప్రసాద్",
+    familyClan: "మొగుళ్ళూరు వారి కుటుంబం",
   },
 
   groom: {
@@ -26,10 +26,10 @@ export const INVITATION_CONFIG = {
     role: "వరుడు",
     relationLabel: "తల్లిదండ్రులు",
     parentHonorific: "సుపుత్రుడు", // S/o (Son of)
-    motherName: "శ్రీమతి అరేపల్లి రాధిక",
-    fatherName: "శ్రీ అరేపల్లి భరవి",
-    formattedParents: "శ్రీమతి అరేపల్లి రాధిక & శ్రీ అరేపల్లి భరవి",
-    familyClan: "అరేపల్లి వారి కుటుంబం",
+    motherName: "శ్రీమతి దోర్నాదుల శోభా రాణి",
+    fatherName: "శ్రీ దోర్నాదుల మధుసూదన్ రావు",
+    formattedParents: "శ్రీమతి దోర్నాదుల శోభా రాణి & శ్రీ దోర్నాదుల మధుసూదన్ రావు",
+    familyClan: "దోర్నాదుల వారి కుటుంబం",
   },
 
   // 2. శుభకార్యం & ఆహ్వాన సందేశాలు (Event & Invitation Messages)
@@ -40,7 +40,9 @@ export const INVITATION_CONFIG = {
       om: "ॐ",
       subham: "|| శుభమస్తు - కళ్యాణమస్తు ||",
     },
+    titlePrefix: "మొగుళ్ళూరు వారి",
     title: "నిశ్చితార్థ మహోత్సవం",
+    fullTitle: "మొగుళ్ళూరు వారి నిశ్చితార్థ మహోత్సవం",
     badge: "శుభ నిశ్చితార్థ ఆహ్వాన పత్రిక",
     tagline: "రెండు హృదయాలు... ఒక్కటైన ప్రయాణం...",
     invitationNote:
@@ -126,7 +128,7 @@ export const INVITATION_CONFIG = {
     seconds: "సెకన్లు",
 
     // Calendar Integration Content
-    calendarTitle: "నిశ్చితార్థ మహోత్సవం: శ్రీజ & శరణ్ కుమార్",
+    calendarTitle: "మొగుళ్ళూరు వారి నిశ్చితార్థ మహోత్సవం: శ్రీజ & శరణ్ కుమార్",
     calendarDescription: "శ్రీజ మరియు శరణ్ కుమార్ గార్ల నిశ్చితార్థ మహోత్సవ వేడుకకు సాదర ఆహ్వానం. శుభ ముహూర్తం: ఉదయం 11:03 గంటలకు. వేదిక: ఎన్వీఆర్ కన్వెన్షన్, సినిమా రోడ్, కాకినాడ.",
   },
 

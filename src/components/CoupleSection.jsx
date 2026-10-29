@@ -64,13 +64,13 @@ const CoupleSection = () => {
                 <span className="font-subheading text-xs sm:text-[13px] text-[#9E782F] font-bold tracking-wider">
                   {bride.relationLabel}
                 </span>
-                
+
                 <div className="mt-1 flex flex-col items-center text-[#483424]">
                   <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {bride.motherName}
+                    {bride.fatherName}
                   </p>
                   <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {bride.fatherName}
+                    {bride.motherName}
                   </p>
                 </div>
               </div>
@@ -127,13 +127,13 @@ const CoupleSection = () => {
                 <span className="font-subheading text-xs sm:text-[13px] text-[#9E782F] font-bold tracking-wider">
                   {groom.relationLabel}
                 </span>
-                
+
                 <div className="mt-1 flex flex-col items-center text-[#483424]">
                   <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {groom.motherName}
+                    {groom.fatherName}
                   </p>
                   <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {groom.fatherName}
+                    {groom.motherName}
                   </p>
                 </div>
               </div>
