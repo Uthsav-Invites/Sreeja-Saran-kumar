@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-beige-bg: #EFE6D5;
+  --color-card-cream: #FAF3E6;
+  --color-card-light: #FDF9F0;
+  --color-card-warm: #F3E6CD;
+  
+  --color-maroon-primary: #820A24;
+  --color-maroon-dark: #630519;
+  --color-maroon-deep: #4A0512;
+  --color-kumkum: #93122A;
+  
+  --color-gold-antique: #A37B32;
+  --color-gold-border: #C5A15B;
+  --color-gold-highlight: #E5C77E;
+  --color-gold-ribbon: #DFBA73;
+  --color-gold-dark: #7C5D2C;
+  
+  --color-body-dark: #483424;
+  --color-body-muted: #6B5442;
+
+  --font-telugu-serif: "Noto Serif Telugu", "Peddana", Georgia, serif;
+  --font-telugu-calligraphy: "Sree Krushnadevaraya", "Peddana", "Noto Serif Telugu", serif;
+  --font-telugu-title: "Sree Krushnadevaraya", "Ramabhadra", "Noto Serif Telugu", serif;
+  --font-telugu-sub: "Ramabhadra", "Noto Serif Telugu", serif;
+  --font-cinzel: "Cinzel", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: "Noto Serif Telugu", "Peddana", serif;
+  }
+
+  body {
+    background-color: #EFE6D5;
+    color: #483424;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Noto Serif Telugu", "Peddana", serif;
+    background-image: 
+      radial-gradient(#C5A15B 0.75px, transparent 0.75px),
+      radial-gradient(#820A24 0.5px, #EFE6D5 0.5px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    background-attachment: fixed;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Calligraphic Telugu Typography for Names & Special Headings */
+.font-calligraphy {
+  font-family: "Sree Krushnadevaraya", "Peddana", "Noto Serif Telugu", serif;
+  letter-spacing: normal;
+  line-height: 1.35;
+}
+
+/* Grand Telugu Heading Font */
+.font-heading {
+  font-family: "Sree Krushnadevaraya", "Ramabhadra", "Noto Serif Telugu", serif;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+/* Solid Inscriptional Telugu Subheading Font */
+.font-subheading {
+  font-family: "Ramabhadra", "Noto Serif Telugu", serif;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+/* Highly Readable Telugu Serif Font for Paragraphs, Labels, Parents Names */
+.font-telugu {
+  font-family: "Noto Serif Telugu", "Peddana", serif;
+  letter-spacing: normal;
+  line-height: 1.6;
+}
+
+/* Authentic Andhra Wedding Invitation Paper Texture */
+.card-telugu-texture {
+  background: radial-gradient(circle at 50% 30%, #FDF9F0 0%, #FAF3E6 55%, #F4E8D1 100%);
+  box-shadow: 
+    0 20px 50px -10px rgba(72, 52, 36, 0.16),
+    0 0 0 1px rgba(197, 161, 91, 0.35);
+}
+
+/* Thin Double-Line Gold Borders (Traditional Andhra Invitation Card Style) */
+.double-border-gold {
+  position: relative;
+  border: 1px solid rgba(197, 161, 91, 0.75);
+}
+
+.double-border-gold::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px solid #C5A15B;
+  pointer-events: none;
+}
+
+/* Shimmer animation for golden accents */
+@keyframes goldShimmer {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(197, 161, 91, 0.4));
+  }
+  50% {
+    filter: brightness(1.15) drop-shadow(0 0 8px rgba(229, 199, 126, 0.8));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(197, 161, 91, 0.4));
+  }
+}
+
+.animate-gold-shimmer {
+  animation: goldShimmer 3.5s ease-in-out infinite;
+}
