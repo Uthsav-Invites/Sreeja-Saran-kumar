@@ -166,11 +166,11 @@ const HeroSection = () => {
             </span>
             <h1 className="font-heading text-center text-[#820A24] font-bold leading-tight drop-shadow-[0_1px_1px_rgba(130,10,36,0.15)] flex flex-col items-center px-2">
               {event.titlePrefix && (
-                <span className="text-3xl sm:text-4xl md:text-[45px] lg:text-[50px] leading-tight font-bold">
+                <span className="text-2xl sm:text-4xl md:text-[40px] lg:text-[45px] leading-tight font-bold">
                   {event.titlePrefix}
                 </span>
               )}
-              <span className="text-xl sm:text-2xl md:text-[26px] lg:text-[28px] font-bold leading-snug mt-1 text-[#820A24]">
+              <span className="text-2xl sm:text-2xl md:text-[26px] lg:text-[28px] font-bold leading-snug mt-1 text-[#820A24]">
                 {event.title}
               </span>
             </h1>
