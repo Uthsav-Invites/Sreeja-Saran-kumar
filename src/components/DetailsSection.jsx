@@ -92,11 +92,11 @@ const DetailsSection = () => {
             </span>
             <h3 className="font-heading text-center text-[#820A24] font-bold mt-0.5 flex flex-col items-center">
               {event.titlePrefix && (
-                <span className="text-xl sm:text-2xl leading-snug">
+                <span className="text-2xl sm:text-3xl md:text-[32px] leading-snug font-bold">
                   {event.titlePrefix}
                 </span>
               )}
-              <span className="text-2xl sm:text-3xl leading-tight mt-0.5">
+              <span className="text-lg sm:text-xl md:text-2xl leading-tight mt-0.5 font-bold">
                 {event.title}
               </span>
             </h3>

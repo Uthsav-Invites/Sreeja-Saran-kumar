@@ -161,20 +161,20 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.7 }}
             className="my-1.5 sm:my-2 flex flex-col items-center"
           >
-            <span className="font-subheading text-[11px] sm:text-xs tracking-widest text-[#9E782F] font-bold uppercase mb-0.5">
+            <span className="font-subheading text-[13px] sm:text-[15px] md:text-base tracking-widest text-[#9E782F] font-bold uppercase mb-1">
               {event.badge}
             </span>
             <h1 className="font-heading text-center text-[#820A24] font-bold leading-tight drop-shadow-[0_1px_1px_rgba(130,10,36,0.15)] flex flex-col items-center px-2">
               {event.titlePrefix && (
-                <span className="text-xl sm:text-2xl md:text-[28px] leading-snug">
+                <span className="text-3xl sm:text-4xl md:text-[45px] lg:text-[50px] leading-tight font-bold">
                   {event.titlePrefix}
                 </span>
               )}
-              <span className="text-3xl sm:text-4xl md:text-[42px] leading-tight mt-0.5">
+              <span className="text-xl sm:text-2xl md:text-[26px] lg:text-[28px] font-bold leading-snug mt-1 text-[#820A24]">
                 {event.title}
               </span>
             </h1>
-            <GoldAuspiciousDivider className="mt-1" />
+            <GoldAuspiciousDivider className="mt-1.5" />
           </motion.div>
 
           {/* 5. Couple Names in Calligraphic Telugu with Interlocking Rings */}
