@@ -30,7 +30,8 @@ const EnvelopeOverlay = ({ onOpenComplete, onStartMusic }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[9999] bg-[#2A1C14]/90 backdrop-blur-md flex flex-col items-center justify-center overflow-hidden p-4 select-none font-telugu"
+      className="notranslate fixed inset-0 z-[9999] bg-[#2A1C14]/90 backdrop-blur-md flex flex-col items-center justify-center overflow-hidden p-4 select-none font-telugu"
+      translate="no"
       exit={{ opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } }}
     >
       {/* Top Skip Button in Telugu */}

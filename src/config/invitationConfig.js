@@ -134,7 +134,8 @@ export const INVITATION_CONFIG = {
 
   // 6. ఆడియో మంగళ వాయిద్యం (Audio Configuration)
   audio: {
-    src: "/assets/music1.mp3",
+    src: "/assets/song.mpeg",
+    startTime: 28.4, // Start playing from 20 seconds onwards
     title: "మంగళ వాయిద్యం - సన్నాయి / నాదస్వరం",
   },
 

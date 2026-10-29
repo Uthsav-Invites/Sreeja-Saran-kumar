@@ -25,12 +25,30 @@ function App() {
     }
   }, [showEnvelope]);
 
+  const startTime = INVITATION_CONFIG.audio.startTime || 0;
+
+  const seekToStartTime = () => {
+    if (audioRef.current && startTime > 0) {
+      if (audioRef.current.currentTime < startTime) {
+        try {
+          audioRef.current.currentTime = startTime;
+        } catch (e) {
+          console.log('Error setting currentTime:', e);
+        }
+      }
+    }
+  };
+
   const toggleMusic = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
+        seekToStartTime();
         audioRef.current
           .play()
-          .then(() => setIsPlaying(true))
+          .then(() => {
+            seekToStartTime();
+            setIsPlaying(true);
+          })
           .catch((e) => console.log('Audio play error:', e));
       } else {
         audioRef.current.pause();
@@ -40,11 +58,31 @@ function App() {
   };
 
   const handleStartMusic = () => {
-    if (audioRef.current && audioRef.current.paused) {
+    if (audioRef.current) {
+      seekToStartTime();
+      if (audioRef.current.paused) {
+        audioRef.current
+          .play()
+          .then(() => {
+            seekToStartTime();
+            setIsPlaying(true);
+          })
+          .catch((e) => console.log('Autoplay handled by user interaction:', e));
+      }
+    }
+  };
+
+  const handleAudioEnded = () => {
+    if (audioRef.current) {
+      try {
+        audioRef.current.currentTime = startTime;
+      } catch (e) {
+        console.log('Error looping to startTime:', e);
+      }
       audioRef.current
         .play()
         .then(() => setIsPlaying(true))
-        .catch((e) => console.log('Autoplay handled by user interaction:', e));
+        .catch((e) => console.log('Loop audio error:', e));
     }
   };
 
@@ -61,7 +99,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <div className="relative min-h-screen bg-[#EFE6D5] flex flex-col font-telugu selection:bg-[#820A24] selection:text-[#FAF3E6]">
+      <div className="relative min-h-screen bg-[#EFE6D5] flex flex-col font-telugu selection:bg-[#820A24] selection:text-[#FAF3E6] notranslate" translate="no">
         
         {/* Subtle Ambient Background Warmth */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -94,14 +132,15 @@ function App() {
         <audio
           ref={audioRef}
           src={INVITATION_CONFIG.audio.src}
-          loop
           preload="auto"
+          onLoadedMetadata={seekToStartTime}
+          onEnded={handleAudioEnded}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
         />
 
         {/* Main Invitation Stream - Card Container */}
-        <main className="relative z-10 flex flex-col w-full mx-auto max-w-[560px] shadow-[0_0_50px_rgba(72,52,36,0.12)] bg-[#FAF3E6] min-h-screen border-l border-r border-[#C5A15B]/40 overflow-x-hidden">
+        <main className="notranslate relative z-10 flex flex-col w-full mx-auto max-w-[560px] shadow-[0_0_50px_rgba(72,52,36,0.12)] bg-[#FAF3E6] min-h-screen border-l border-r border-[#C5A15B]/40 overflow-x-hidden" translate="no">
           
           {/* Section A: Main Traditional Telugu Invitation Card */}
           <HeroSection />
