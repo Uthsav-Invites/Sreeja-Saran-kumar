@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { INVITATION_CONFIG } from '../config/invitationConfig';
 import {
@@ -10,7 +10,32 @@ import {
 } from './TraditionalMotifs';
 
 const HeroSection = () => {
-  const { bride, groom, event, schedule } = INVITATION_CONFIG;
+  const { bride, groom, event, schedule, ui } = INVITATION_CONFIG;
+
+  const calculateTimeLeft = () => {
+    const target = new Date(schedule.isoDate).getTime();
+    const now = new Date().getTime();
+    const difference = target - now;
+
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [schedule.isoDate]);
 
   return (
     <section className="relative w-full min-h-[100dvh] flex items-center justify-center p-2 sm:p-3 overflow-hidden bg-[#EFE6D5]">
@@ -269,6 +294,52 @@ const HeroSection = () => {
                 </span>
                 <span className="font-heading font-bold text-base sm:text-[19px] text-[#820A24] leading-tight drop-shadow-[0_1px_1px_rgba(130,10,36,0.12)]">
                   {schedule.muhurthamTime}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Countdown Highlight Strip in Hero Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.05, duration: 0.7 }}
+            className="w-full max-w-[340px] my-1 flex flex-col items-center"
+          >
+            <span className="font-subheading text-[11px] sm:text-xs text-[#9E782F] font-bold mb-1">
+              {ui.countdownHeading}
+            </span>
+            <div className="grid grid-cols-4 gap-1.5 w-full">
+              <div className="bg-[#FAF3E6]/90 py-1 px-1 rounded border border-[#C5A15B]/40 text-center shadow-xs">
+                <span className="font-heading text-base sm:text-lg font-bold text-[#820A24] block leading-none">
+                  {timeLeft.days}
+                </span>
+                <span className="font-subheading text-[9.5px] sm:text-[10px] font-bold text-[#483424] mt-0.5 block">
+                  {ui.days}
+                </span>
+              </div>
+              <div className="bg-[#FAF3E6]/90 py-1 px-1 rounded border border-[#C5A15B]/40 text-center shadow-xs">
+                <span className="font-heading text-base sm:text-lg font-bold text-[#820A24] block leading-none">
+                  {timeLeft.hours}
+                </span>
+                <span className="font-subheading text-[9.5px] sm:text-[10px] font-bold text-[#483424] mt-0.5 block">
+                  {ui.hours}
+                </span>
+              </div>
+              <div className="bg-[#FAF3E6]/90 py-1 px-1 rounded border border-[#C5A15B]/40 text-center shadow-xs">
+                <span className="font-heading text-base sm:text-lg font-bold text-[#820A24] block leading-none">
+                  {timeLeft.minutes}
+                </span>
+                <span className="font-subheading text-[9.5px] sm:text-[10px] font-bold text-[#483424] mt-0.5 block">
+                  {ui.minutes}
+                </span>
+              </div>
+              <div className="bg-[#FAF3E6]/90 py-1 px-1 rounded border border-[#C5A15B]/40 text-center shadow-xs">
+                <span className="font-heading text-base sm:text-lg font-bold text-[#820A24] block leading-none">
+                  {timeLeft.seconds}
+                </span>
+                <span className="font-subheading text-[9.5px] sm:text-[10px] font-bold text-[#483424] mt-0.5 block">
+                  {ui.seconds}
                 </span>
               </div>
             </div>
