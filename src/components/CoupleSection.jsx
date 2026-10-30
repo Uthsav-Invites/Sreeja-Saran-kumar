@@ -59,19 +59,27 @@ const CoupleSection = () => {
                 {bride.fullName}
               </h3>
 
-              {/* Parents Section */}
+              {/* Parents / Lineage Section */}
               <div className="mt-2 flex flex-col items-center w-full">
                 <span className="font-subheading text-xs sm:text-[13px] text-[#9E782F] font-bold tracking-wider">
                   {bride.relationLabel}
                 </span>
 
-                <div className="mt-1 flex flex-col items-center text-[#483424]">
-                  <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {bride.fatherName}
-                  </p>
-                  <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
-                    {bride.motherName}
-                  </p>
+                <div className="mt-1 flex flex-col items-center text-[#483424] text-center max-w-[360px] sm:max-w-[400px] px-2">
+                  {bride.formattedParents ? (
+                    <p className="font-telugu font-semibold text-sm sm:text-[15px] leading-relaxed text-[#483424]">
+                      {bride.formattedParents}
+                    </p>
+                  ) : (
+                    <>
+                      <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
+                        {bride.fatherName}
+                      </p>
+                      <p className="font-telugu font-semibold text-base sm:text-lg leading-snug">
+                        {bride.motherName}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

@@ -16,7 +16,7 @@ export const INVITATION_CONFIG = {
     parentHonorific: "సుపుత్రిక", // D/o (Daughter of)
     motherName: "శ్రీమతి మొగుళ్ళూరు హిమజ",
     fatherName: "శ్రీ మొగుళ్ళూరు ప్రసాద్",
-    formattedParents: "శ్రీమతి మొగుళ్ళూరు హిమజ & శ్రీ మొగుళ్ళూరు ప్రసాద్",
+    formattedParents: "మొగుళ్ళూరు బాలసుబ్రమణ్యం  శ్రీమతి మొగుళ్ళూరు హైమావతిల జేష్ఠ కుమారుడు  మొగుళ్ళూరు ప్రసాద్  శ్రీమతి మొగుళ్ళూరు హిమజల కుమార్తె",
     familyClan: "మొగుళ్ళూరు వారి కుటుంబం",
   },
 
@@ -74,9 +74,9 @@ export const INVITATION_CONFIG = {
     muhurthamTime: "ఉదయం 9.30 నుండి 11.30 వరకు",
     muhurthamFull: "శుభ ముహూర్తం: ఉదయం 11:03 గంటలకు",
     // ISO Date for Countdown Timer & Calendar Integration (IST is UTC+05:30)
-    isoDate: "2026-10-29T11:03:00+05:30",
-    googleCalStart: "20261029T053300Z", // 11:03 AM IST in UTC (05:33)
-    googleCalEnd: "20261029T083300Z",   // 2:03 PM IST in UTC (08:33)
+    isoDate: "2026-11-01T09:30:00+05:30",
+    googleCalStart: "20261101T040000Z", // 9:30 AM IST in UTC (04:00)
+    googleCalEnd: "20261101T060000Z",   // 11:30 AM IST in UTC (06:00)
   },
 
   // 4. వేదిక మరియు చిరునామా (Venue & Location)
